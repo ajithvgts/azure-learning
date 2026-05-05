@@ -40,10 +40,11 @@ jobs:
           cp host.json deploy/
           cp package.json deploy/
           cd deploy && npm install --omit=dev
+          cd .. && zip -r deploy.zip deploy/
 
       - name: Deploy to Azure Functions
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
-          package: deploy
+          package: deploy.zip
