@@ -2,6 +2,7 @@
   "name": "azure-learning",
   "version": "1.0.0",
   "description": "Azure Functions Hello World - TypeScript",
+  "packageManager": "pnpm@latest",
   "main": "dist/functions/helloWorld.js",
   "scripts": {
     "build": "tsc",
